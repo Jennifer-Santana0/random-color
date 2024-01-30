@@ -1,0 +1,7 @@
+@media screen and (max-width: 700px){
+    main{
+        padding: 3% 5%;
+        grid-template-columns: auto;
+        grid-template-rows: 50vh 60vh 20vh 20vh;
+    }
+}
