@@ -1,5 +1,6 @@
 const options = document.querySelectorAll('.options')
 const content = document.querySelectorAll('.content')
+const op_main = document.querySelectorAll('.op_main')
 
 options.forEach((option,index)=>{
     option.addEventListener('click',()=>{
@@ -20,3 +21,11 @@ options.forEach((option,index)=>{
     }) 
 })
 
+op_main.forEach((option)=>{
+    option.addEventListener('click',()=>{
+        op_main.forEach((other_option)=>{
+            other_option.classList.remove('border_green')
+        })
+        option.classList.add('border_green')
+    })
+})
