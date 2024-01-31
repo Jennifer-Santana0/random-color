@@ -32,3 +32,6 @@
 #op_2_main p{
     flex: 50%;
 }
+.border_green_main{
+    border: 2px solid rgb(4, 245, 4);
+}

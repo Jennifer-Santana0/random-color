@@ -1,0 +1,26 @@
+.op_footer{
+    width: 100%;
+    background-color: rgb(200, 202, 204);
+    border: 1px solid;
+    padding: 10px;
+}
+.op_footer a{
+    font-size: 16px;
+}
+
+#op_1_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#op_2_footer{
+    display: flex;
+    justify-content: space-between;
+}
+#op_2_footer div{
+    display: flex;
+    flex-direction: column;
+}
+.border_green_footer{
+    border: 2px solid rgb(4, 245, 4);
+}
