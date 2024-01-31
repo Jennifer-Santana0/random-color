@@ -79,6 +79,12 @@ op_footer.forEach((option)=>{
         op_footer.forEach((other_option)=>{
             other_option.classList.remove('border_green_footer')
         })
+
+        // adicionando no layout_header
+        content_footer.innerHTML = ''
+        const clone = option.cloneNode(true)
+        content_footer.appendChild(clone)
+
         option.classList.add('border_green_footer')
     })
 })

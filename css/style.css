@@ -37,14 +37,12 @@ main{
 #layout{
     overflow-y: scroll;
 }
-#layout div{
-    padding: 10px;
-}
+/* dentro do layout */
 #content_main{
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
+
 /* ------------------ FOOTER ------------- */
 footer{
     width: 100%;

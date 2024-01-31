@@ -12,14 +12,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 50px;
 }
 #op_2_footer{
     display: flex;
     justify-content: space-between;
 }
+#op_2_footer a{
+    margin-bottom: 5px;
+}
 #op_2_footer div{
     display: flex;
     flex-direction: column;
+}
+#op_2_footer div:nth-of-type(2){
+    text-align: end;
 }
 .border_green_footer{
     border: 2px solid rgb(4, 245, 4);
