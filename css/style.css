@@ -34,6 +34,17 @@ main{
 #select_layout,#layout,#generator_color,#random_color{
     border: 1px solid;
 }
+#layout{
+    overflow-y: scroll;
+}
+#layout div{
+    padding: 10px;
+}
+#content_main{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 /* ------------------ FOOTER ------------- */
 footer{
     width: 100%;
