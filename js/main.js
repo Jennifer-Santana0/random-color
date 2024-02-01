@@ -11,7 +11,6 @@ const btn_generator_color = document.querySelector('#btn_generator_color')
 
 
 
-let validacao_get_color = false
 // funcao de pegar paleta de cor
 const get_color = () => {
     // elementos que estao no layout
@@ -22,6 +21,7 @@ const get_color = () => {
     const footer_layout = document.querySelectorAll('.clone_footer')
     const paletas = document.querySelectorAll('.paletas')
     const show = document.querySelectorAll('.show')
+    
     
     var url = "http://colormind.io/api/";
     var data = {
@@ -53,7 +53,7 @@ const get_color = () => {
             paletas.forEach((el,i)=>{
                 el.style.background = `rgb(${palette[i][0]},${palette[i][1]},${palette[i][2]})`
             })
-
+            
             paletas.forEach((el,index)=>{
                 el.addEventListener('mouseover',()=>{
                     const fundo = getComputedStyle(el)
@@ -74,9 +74,10 @@ const get_color = () => {
 
     http.open("POST",url,true);
     http.send(JSON.stringify(data));
+   
 };
 
-
+// abrindo as opcoes
 options.forEach((option,index)=>{
     option.addEventListener('click',()=>{
         if (!option.classList.contains('expanded')){
@@ -118,9 +119,7 @@ let validacao_main_1 = true
 let validacao_main_2 = true
 let validacao_main_3 = true
 op_main.forEach((option,index)=>{
-    option.addEventListener('click',()=>{
-        
-        
+    option.addEventListener('click',()=>{   
         // adicionando no layout_main
         if (index===0 && validacao_main_1===true){
             const clone = option.cloneNode(true)
@@ -172,7 +171,7 @@ op_footer.forEach((option)=>{
 // quando apertar para limpar o layout
 btn_clear.addEventListener('click',()=>{
     const paletas = document.querySelectorAll('.paletas')
-    const show = document.querySelectorAll('.show')
+   
     content_header.innerHTML= ''
     content_main.innerHTML= ''
     content_footer.innerHTML= ''
@@ -195,6 +194,8 @@ btn_clear.addEventListener('click',()=>{
     paletas.forEach((el)=>{
         el.style.background = 'rgb(200, 196, 170)'
     })
+
+   
 })
 
 

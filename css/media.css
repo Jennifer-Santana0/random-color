@@ -2,7 +2,26 @@
     main{
         padding: 3% 5%;
         grid-template-columns: auto;
-        grid-template-rows: 50vh 60vh 20vh 20vh;
+        grid-template-rows: 50vh 60vh 20vh 40vh;
+    }
+    #random_color{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+    }
+    .paletas{
+        border-left: none;
+        cursor: pointer;
+    }
+    .paletas:nth-of-type(1){
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+    }
+    .paletas:nth-of-type(2){
+        border-bottom: 1px solid;
+    }
+    .paletas:nth-of-type(3){
+        border-right: 1px solid;
     }
 
 }
