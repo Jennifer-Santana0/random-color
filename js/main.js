@@ -6,6 +6,76 @@ const op_footer = document.querySelectorAll('.op_footer')
 const content_header = document.querySelector('#content_header')
 const content_main = document.querySelector('#content_main')
 const content_footer = document.querySelector('#content_footer')
+const btn_clear = document.querySelector('#btn_clear_layout')
+const btn_generator_color = document.querySelector('#btn_generator_color')
+
+
+
+let validacao_get_color = false
+// funcao de pegar paleta de cor
+const get_color = () => {
+    // elementos que estao no layout
+    const header_layout = document.querySelectorAll('.clone_header')
+    const main_layout = document.querySelectorAll('.clone_main')
+    const card_layout = document.querySelectorAll('.clone_card')
+    const h3 = document.querySelectorAll('h3')
+    const footer_layout = document.querySelectorAll('.clone_footer')
+    const paletas = document.querySelectorAll('.paletas')
+    const show = document.querySelectorAll('.show')
+    
+    var url = "http://colormind.io/api/";
+    var data = {
+        model: "default",
+        input: [[44,43,44],[90,83,82],"N",'N','N']
+    };
+
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            var palette = JSON.parse(http.responseText).result;
+            
+            // Adicionando as cores
+            header_layout.forEach((el)=>{
+                el.style.background = `rgb(${palette[0][0]},${palette[0][1]},${palette[0][2]})`
+            })
+            main_layout.forEach((el)=>{
+                el.style.background = `rgb(${palette[3][0]},${palette[3][1]},${palette[3][2]})`
+            })
+            card_layout.forEach((el)=>{
+                el.style.background = `rgb(${palette[2][0]},${palette[2][1]},${palette[2][2]})`
+            })
+            h3.forEach((el)=>{
+                el.style.color = `rgb(${palette[0][0]},${palette[0][1]},${palette[0][2]})`
+            })
+            footer_layout.forEach((el)=>{
+                el.style.background = `rgb(${palette[0][0]},${palette[0][1]},${palette[0][2]})`
+            })
+            paletas.forEach((el,i)=>{
+                el.style.background = `rgb(${palette[i][0]},${palette[i][1]},${palette[i][2]})`
+            })
+
+            paletas.forEach((el,index)=>{
+                el.addEventListener('mouseover',()=>{
+                    const fundo = getComputedStyle(el)
+                    const cor = fundo.backgroundColor
+                    
+                    show[index].classList.add('anima')
+                    show[index].innerHTML = cor
+                })
+            })
+            paletas.forEach((el,index)=>{
+                el.addEventListener('mouseout',()=>{
+                    show[index].classList.remove('anima')
+                    show[index].innerHTML = ''
+                })
+            })
+        } 
+    };
+
+    http.open("POST",url,true);
+    http.send(JSON.stringify(data));
+};
+
 
 options.forEach((option,index)=>{
     option.addEventListener('click',()=>{
@@ -36,6 +106,7 @@ op_header.forEach((option)=>{
         // adicionando no layout_header
         content_header.innerHTML = ''
         const clone = option.cloneNode(true)
+        clone.classList.add('clone_header')
         content_header.appendChild(clone)
 
         option.classList.add('border_green_header')
@@ -54,16 +125,24 @@ op_main.forEach((option,index)=>{
         if (index===0 && validacao_main_1===true){
             const clone = option.cloneNode(true)
             clone.classList.add('main_height')
+            clone.classList.add('clone_main')
+
+            const cardsclone = clone.querySelectorAll('.cards')
+            cardsclone.forEach((el)=>{
+                el.classList.add('clone_card')
+            })
             content_main.appendChild(clone)
             validacao_main_1 = false
         } else if (index===1 && validacao_main_2 === true){
             const clone = option.cloneNode(true)
             clone.classList.add('main_height')
+            clone.classList.add('clone_main')
             content_main.appendChild(clone)
             validacao_main_2 = false
         }else if (index===2 && validacao_main_3 === true){
             const clone = option.cloneNode(true)
             clone.classList.add('main_height')
+            clone.classList.add('clone_main')
             content_main.appendChild(clone)
             validacao_main_3 = false
         }
@@ -83,8 +162,51 @@ op_footer.forEach((option)=>{
         // adicionando no layout_header
         content_footer.innerHTML = ''
         const clone = option.cloneNode(true)
+        clone.classList.add('clone_footer')
         content_footer.appendChild(clone)
 
         option.classList.add('border_green_footer')
     })
+})
+
+// quando apertar para limpar o layout
+btn_clear.addEventListener('click',()=>{
+    const paletas = document.querySelectorAll('.paletas')
+    const show = document.querySelectorAll('.show')
+    content_header.innerHTML= ''
+    content_main.innerHTML= ''
+    content_footer.innerHTML= ''
+
+    // retirando a bordar verde
+    op_header.forEach((el)=>{
+        el.classList.remove('border_green_header')
+    })
+    op_main.forEach((el)=>{
+        el.classList.remove('border_green_main')
+    })
+    op_footer.forEach((el)=>{
+        el.classList.remove('border_green_footer')
+    })
+
+    validacao_main_1 = true
+    validacao_main_2 = true
+    validacao_main_3 = true
+
+    paletas.forEach((el)=>{
+        el.style.background = 'rgb(200, 196, 170)'
+    })
+})
+
+
+
+// quando apertar no botao para gerar as cores
+btn_generator_color.addEventListener("click",() => {
+    const header_filho = content_header.querySelectorAll('div')
+    const main_filho = content_main.querySelectorAll('div')
+    const footer_filho = content_footer.querySelectorAll('div')
+    if (header_filho.length===0 || main_filho.length===0 || footer_filho.length===0){
+        alert('Você precisa adicionar pelo menos um elemento de cada opção.')
+    } else {
+        get_color()
+    }
 })

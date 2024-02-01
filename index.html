@@ -60,7 +60,7 @@
             </div>
             
             <!-- option main -->
-            <div class="options" id="w">
+            <div class="options">
                 <div class="face">
                     <p>main</p>
                     <img src="img/seta-para-baixo.png" alt="seta para baixo">
@@ -90,13 +90,16 @@
                     <!-- op 2 -->
                     <div id="op_2_main" class="op_main">
                         <div><img src="img/imagem.png" alt="icone de imagem"></div>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ab. Odit dolorem autem facilis incidunt optio odio perspiciatis possimus, nihil rem perferendis accusamus similique velit voluptatibus sed, nulla at dignissimos?
-                        </p>
+                        <div>
+                            <h3>Titulo</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ab. Odit dolorem autem facilis incidunt optio odio perspiciatis possimus, nihil rem perferendis accusamus similique velit voluptatibus sed, nulla at dignissimos?
+                            </p>
+                        </div>
                     </div>
                     <!-- op 3 -->
                     <div id="op_3_main" class="op_main">
-                        <h4>Titulo</h4>
+                        <h3>Titulo</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ab. Odit dolorem autem facilis incidunt optio odio perspiciatis possimus, nihil rem perferendis accusamus similique velit voluptatibus sed, nulla at dignissimos?
                         </p>
@@ -140,16 +143,31 @@
         </div>
 
         <!-- gerador de cores -->
-        <div id="generator_color">generator_color</div>
-        <!-- exibiçao das cores -->
-        <div id="random_color">random_color</div>
-    </main>
+        <div id="generator_color">
+            <button class="btns" id="btn_generator_color">Gerar Cores</button>
+            <button class="btns" id="btn_clear_layout">Limpar Layout</button>
+        </div>
 
+        <!-- exibiçao das cores -->
+        <div id="random_color">
+            <div class="paletas">
+                <div class="show"></div>
+            </div>
+            <div class="paletas">
+                <div class="show"></div>
+            </div>
+            <div class="paletas">
+                <div class="show"></div>
+            </div>
+            <div class="paletas">
+                <div class="show"></div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <i>@Jennifer Santana</i>
     </footer>
-
 
     <script src="js/main.js"></script>
 </body>

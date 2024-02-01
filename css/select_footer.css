@@ -1,7 +1,6 @@
 .op_footer{
     width: 100%;
     background-color: rgb(200, 202, 204);
-    border: 1px solid;
     padding: 10px;
 }
 .op_footer a{
@@ -29,5 +28,8 @@
     text-align: end;
 }
 .border_green_footer{
-    border: 2px solid rgb(4, 245, 4);
+    border: 3px solid rgb(4, 245, 4);
+}
+.clone_footer{
+    width: 100%;
 }

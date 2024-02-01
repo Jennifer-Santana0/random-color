@@ -1,5 +1,4 @@
 .op_main{
-    border: 1px solid;
     width: 100%;
     background-color: rgb(200, 202, 204);
     padding: 3%;  
@@ -35,19 +34,32 @@
 }
 #op_2_main div{
     flex: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    gap: 10px;
+    margin-left: 10px;
 }
-#op_2_main p{
-    flex: 50%;
+#op_2_main div:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
 }
-#op_3_main h4{
+
+
+#op_3_main h3{
     margin-bottom: 10px;
 }
 .border_green_main{
-    border: 2px solid rgb(4, 245, 4);
+    border: 3px solid rgb(4, 245, 4);
 }
 .main_height{
     height: 200px;
+    border-bottom: 1px solid;
+}
+.clone_main{
+    width: 100%;
+}
+.clone_card{
+    border: 1px solid;
 }
 
