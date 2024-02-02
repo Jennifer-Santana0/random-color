@@ -26,8 +26,8 @@
     padding: 3px;
     font-size: 15px;
     border-radius: 5px;
-    width: 100px;
-    height: auto;
+    width: 30%;
+    min-height: 150px;
 }
 #op_2_main{
    display: flex;
