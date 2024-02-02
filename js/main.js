@@ -53,33 +53,13 @@ const get_color = () => {
                 el.style.background = `rgb(${palette[i][0]},${palette[i][1]},${palette[i][2]})`
             })
             
-            // dektop
-            paletas.forEach((el,index)=>{
-                el.addEventListener('mouseover',()=>{
-                    const fundo = getComputedStyle(el)
-                    const cor = fundo.backgroundColor
-                    
-                    show[index].classList.add('anima')
-                    show[index].innerHTML = cor
-                })
-            })
-            // mobile
-            paletas.forEach((el,index)=>{
-                el.addEventListener('click',()=>{
-                    const fundo = getComputedStyle(el)
-                    const cor = fundo.backgroundColor
-                    
-                    show[index].classList.add('anima')
-                    show[index].innerHTML = cor
-                })
-            })
 
-            paletas.forEach((el,index)=>{
-                el.addEventListener('mouseout',()=>{
-                    show[index].classList.remove('anima')
-                    show[index].innerHTML = ''
-                })
+            paletas.forEach((el,index)=>{   
+                const fundo = getComputedStyle(el)
+                const cor = fundo.backgroundColor
+                show[index].innerHTML = cor
             })
+                        
         } 
     };
 

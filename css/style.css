@@ -67,23 +67,11 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 .paletas:nth-of-type(1){
     border: none;
 }
-@keyframes up{
-    0%{
-        transform: translateY(10px);
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
-.anima{
-    animation-name: up;
-    animation-duration: .5s;
-}
+
 /* ------------------ FOOTER ------------- */
 footer{
     width: 100%;
