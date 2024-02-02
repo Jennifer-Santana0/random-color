@@ -14,6 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 .cards{
     border: 1px solid;
@@ -24,8 +26,8 @@
     padding: 3px;
     font-size: 15px;
     border-radius: 5px;
-    width: 30%;
-    height: 100%;
+    width: 100px;
+    height: auto;
 }
 #op_2_main{
    display: flex;
