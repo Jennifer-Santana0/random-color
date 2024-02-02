@@ -28,8 +28,8 @@ main{
     padding: 1% 5%;
     display: grid; 
     gap: 10px;
-    grid-template-columns: 30% auto;
-    grid-template-rows: 70% auto; 
+    grid-template-columns: calc(40vw - 10%) 60vw;
+    grid-template-rows: 50vh 19vh; 
 }
 #select_layout,#layout,#generator_color,#random_color{
     border: 1px solid;
